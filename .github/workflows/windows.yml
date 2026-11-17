@@ -1,0 +1,43 @@
+name: Windows tests and executable
+
+on:
+  push:
+    paths: ['windows/**', 'LICENSE', 'README.md', '.github/workflows/windows.yml']
+  pull_request:
+    paths: ['windows/**', 'LICENSE', 'README.md', '.github/workflows/windows.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test and build Windows executable
+        shell: pwsh
+        run: '& "./windows/Build Spotify Control.ps1"'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Windows-test-and-build-logs
+          path: windows/build/*.log
+          if-no-files-found: ignore
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Windows-test-results
+          path: windows/build/test-results.txt
+          if-no-files-found: ignore
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Spotify-Control-Windows
+          path: |
+            releases/Spotify-Control-Windows.zip
+            releases/Spotify-Control-Windows.zip.sha256
+          if-no-files-found: error

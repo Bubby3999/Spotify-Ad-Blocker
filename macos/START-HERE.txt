@@ -1,0 +1,27 @@
+Spotify Control 1.0 for macOS 12+ (Apple Silicon and Intel)
+Created by Bubby3999. See LICENSE for attribution requirements.
+
+1. Extract this ZIP completely.
+2. Open "Install Spotify Control.command". It saves any previous helper app,
+   LaunchAgent and settings in ~/Library/Application Support/Spotify Control/Backups/.
+3. Open Spotify normally. Allow Spotify Control to control Spotify if prompted.
+4. Use the music-note menu-bar icon to open the dashboard.
+
+Open + Hide is the default. Previously saved explicit mode choices are kept.
+Other modes are Open + Stay and Open + Stay + Lyrics. Lyrics requests are
+experimental; Spotify may ignore the internal route, and some songs lack lyrics.
+
+The installer never replaces, downgrades or pins Spotify itself. Restarting
+Spotify can lose your temporary queue. Keep important tracks in a playlist.
+
+This build is locally signed, not notarized with an Apple Developer ID.
+No Python, npm, Xcode or other developer tools are needed to use this download.
+
+Stop the helper:
+  launchctl bootout "gui/$(id -u)/com.user.spotifyadmute"
+Prevent login startup:
+  launchctl disable "gui/$(id -u)/com.user.spotifyadmute"
+
+To roll back, stop it, restore the backed-up app and plist to their original
+locations, then bootstrap that plist. Your current Spotify installation is
+unchanged by the helper installer.

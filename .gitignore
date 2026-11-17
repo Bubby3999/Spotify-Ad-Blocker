@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+*.app/
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# Logs and local backups
+*.log
+*.bak*
+original-installation/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+dist/
+*.spec
+
+# Local publishing notes, device inventory and test evidence
+/GITHUB_SETUP.md
+/LOCAL_TEST_PLAN.md
+/local-notes/
+/local-test-results/
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+.pytest_cache/
+.ruff_cache/
+Thumbs.db
+Desktop.ini
+
+# Optional npm preview launcher
+node_modules/
+/releases/

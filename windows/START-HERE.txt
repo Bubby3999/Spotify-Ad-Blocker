@@ -1,0 +1,26 @@
+Spotify Control 1.0 for Windows (x64)
+Created by Bubby3999. See LICENSE for attribution requirements.
+
+1. Extract this ZIP completely.
+2. Open Spotify-Control.exe. No Python or npm installation is needed.
+3. Open Spotify normally. The helper watches for explicit ads while it is open.
+
+Open + Hide is the default. Choose Open + Stay or Open + Stay + Lyrics in the
+dashboard if preferred. Explicit mode choices are saved. Lyrics requests are
+experimental; Spotify may ignore the internal route, and some songs lack lyrics.
+
+Closing the dashboard keeps the helper in the system tray. Click its icon to
+reopen it. Right-click the tray icon and choose Quit helper to stop completely.
+Instructions, Play/Pause, manual/daily refresh and check intervals are available
+in the dashboard. Logs/settings live at %LOCALAPPDATA%\Spotify Control\.
+
+Optional login startup: press Win+R, enter shell:startup, then put a shortcut to
+Spotify-Control.exe in that folder. Keep the extracted application in one place.
+
+The helper is unsigned. It does not change Spotify's files, installation or
+update settings. It may briefly flash Spotify's window on recovery. Restarts
+can lose your queue; keep important tracks in a playlist.
+
+Native tests use a simulated media window to verify quit/reopen/play/hide flows
+without an account. This does not guarantee compatibility with every Spotify
+version, ad type, audio device or queue. Consult the included instructions.
