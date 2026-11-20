@@ -205,13 +205,15 @@ by `Win + R` → `shell:startup`.
 
 You can retain or remove the helper's logs and settings separately.
 
-## Queue problems and optional downgrade
+## Queue problems: downgrade to Spotify 1.2.85.519
 
-Keep a playlist of tracks you care about; a temporary queue may be lost on a
-restart. Windows mute mode avoids restarting Spotify. Older Spotify versions
-may behave differently, but queue retention is not guaranteed on either OS.
+Newer Spotify Desktop versions can clear your queue when the app restarts after
+an ad. In my own use on macOS, **Spotify 1.2.85.519** keeps the queue through
+restarts, so that's the version to downgrade to if your queue keeps getting
+wiped. No Windows version has been checked yet; Windows mute mode
+(`--mode mute`) avoids the problem because it never restarts Spotify.
 
-If you already have a trusted older Spotify installer or app backup:
+To downgrade, using a trusted older Spotify installer or app backup:
 
 1. Save the queued tracks to a playlist, keep your current installer/app backup,
    and stop Spotify Control and Spotify.
@@ -219,16 +221,15 @@ If you already have a trusted older Spotify installer or app backup:
    uninstall the current desktop app through Settings → Apps, then run the older
    desktop installer. Microsoft Store installation does not offer a version
    picker for this process.
-3. Check Spotify's About/version information before restarting the helper.
-   The Mac baseline here is **1.2.85.519**; no Windows downgrade target has been
-   validated.
+3. Check that Spotify's About/version information shows **1.2.85.519** before
+   restarting the helper.
 4. Test with a short queue first. Restore your saved app/installer if the older
    version cannot sign in or play. Reinstalling can require downloading offline
    content again; see [Spotify's reinstall guide](https://support.spotify.com/us/article/reinstall-spotify/).
 
-This repository supplies no Spotify installer and does not pin updates for you.
-Older versions miss later fixes. Without a trusted older copy, use the current
-Spotify release and treat queue retention as an unresolved limitation.
+This repository supplies no Spotify installer and does not pin updates for you,
+so turn off or block Spotify updates if you want to stay on 1.2.85.519. Older
+versions miss later fixes, and Spotify can change this behavior at any time.
 
 ## Testing
 
